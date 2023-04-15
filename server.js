@@ -1,4 +1,4 @@
-function register(event){
+function register(event) {
     event.preventDefault();
     var name = document.getElementById("userName").value
     var email = document.getElementById("userEmail").value
@@ -10,42 +10,42 @@ function register(event){
     // console.log(password,"password here");
     // console.log(confirmPassword,"confirmPassword here");
 
-    if(name && email && password && confirmPassword){
-        if(password.length>=8 && confirmPassword.length>=8){
-            if(password == confirmPassword){
+    if (name && email && password && confirmPassword) {
+        if (password.length >= 8 && confirmPassword.length >= 8) {
+            if (password == confirmPassword) {
                 // var data = object{}
                 var data = {
-                    nameee : name,
-                    email : email,
+                    nameee: name,
+                    email: email,
                     password: password,
-                    confirmPassword : confirmPassword
+                    confirmPassword: confirmPassword
                 }
                 // console.log("data is here",data);
                 // now store data in ls
-                localStorage.setItem("USERS",JSON.stringify(data))
-
+                localStorage.setItem("USERS", JSON.stringify(data))
+                // var fetchedData = JSON.parse(localStorage.getItem("USERS"));
+                // console.log(fetchedData);
+                //     console.log(JSON.parse(fetchedData));
                 // JSON.stringify(); convert object into json
                 // JSON.parse(); convert json into object
                 // localStorage.setItem(key,value) to save data in ls
                 // localStorage.getItem(key) to get data from ls
                 // localStorage.removeItem(key)to remove data from ls
 
-            }else{
+            } else {
                 console.log("password not matched");
             }
-        }else{
+        } else {
             console.log("password should be 8 or more digit");
         }
-    }else{
+    } else {
         console.log("fill all the fields");
     }
 
 }
 
-function getData(){
-    event.preventDefault();
-    JSON.parse("USERS")
-    var data= localStorage.getItem("USERS");
-    console.log("USERS");
 
+function getData() {
+   var fetchedData =JSON.parse(localStorage.getItem("USERS"));
+   console.log(fetchedData);
 }
