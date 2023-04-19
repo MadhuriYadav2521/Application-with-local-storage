@@ -53,9 +53,27 @@ function register(event) {
 }
 
 
-// function getData() {
-//    var fetchedData =JSON.parse(localStorage.getItem("USERS"));
-//    console.log(fetchedData);
-// }
+function login(event){
+    event.preventDefault();
+    var email = document.getElementById("userEmail").value
+    var password = document.getElementById("userPassword").value
+    if(email && password){
+        var flag = false;
+        var  LS = JSON.parse(localStorage.getItem("USERS"));
+        for(var i =0; i<LS.length; i++){
+            if(LS[i].useremail == email && LS[i].password == password ){
+                flag= true;
+            }
+        }
+        if(flag == true){
+            alert("login successful")
+        }else{
+            alert("credentials not matched")
+        }
+    }else{
+        console.log("fill all the fields");
+    }
+   
+}
 
 

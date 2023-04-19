@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Step 1  : Get user typed data from html to JS = Completed
+ Step 2 : Get all users data into JS from LS = Completed Step 3 : Iterate all users (LS) with user typed data 
+ Step 4 : If email & password both match at same time then
+  show user suceess -->
+    <form onsubmit="login(event)"  action="" style="width: 50%; margin: 50px auto;">
+        <fieldset>
+            <legend>Login</legend>
+            <label for="">Email</label><br>
+            <input id="userEmail" type="email"placeholder="your email"><br>
+            <label for="">Password</label><br>
+            <input id="userPassword" type="password"placeholder="password"><br><br>
+            <input  id="submit" type="submit" value="Login"></input>
+
+        </fieldset>
+    </form>
+
+
+    <script src="./server.js"></script>
+</body>
+</html>
