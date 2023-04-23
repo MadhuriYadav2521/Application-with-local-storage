@@ -4,7 +4,7 @@ function register(event) {
     var email = document.getElementById("userEmail").value
     var password = document.getElementById("userPassword").value
     var confirmPassword = document.getElementById("userConfirmPassword").value
- // console.log(name,"name here");
+    // console.log(name,"name here");
     // console.log(email,"email here");
     // console.log(password,"password here");
     // console.log(confirmPassword,"confirmPassword here");
@@ -31,10 +31,10 @@ function register(event) {
                     LS.push(data);
                     localStorage.setItem("USERS", JSON.stringify(LS));
                     alert("registration successful")
-                    document.getElementById("userName").value= "";
-                    document.getElementById("userEmail").value= "";
-                    document.getElementById("userPassword").value= "";
-                    document.getElementById("userConfirmPassword").value= "";
+                    document.getElementById("userName").value = "";
+                    document.getElementById("userEmail").value = "";
+                    document.getElementById("userPassword").value = "";
+                    document.getElementById("userConfirmPassword").value = "";
 
                 } else {
                     alert("email already exist");
@@ -55,37 +55,37 @@ function register(event) {
 
 
 
-function login(event){
+function login(event) {
     event.preventDefault();
     var email = document.getElementById("userEmail").value
     var password = document.getElementById("userPassword").value
     var currentUser;
-    if(email && password){
+    if (email && password) {
         var flag = false;
-        var  LS = JSON.parse(localStorage.getItem("USERS"));
-        for(var i =0; i<LS.length; i++){
-            if(LS[i].useremail == email && LS[i].password == password ){
-                flag= true;
+        var LS = JSON.parse(localStorage.getItem("USERS"));
+        for (var i = 0; i < LS.length; i++) {
+            if (LS[i].useremail == email && LS[i].password == password) {
+                flag = true;
                 currentUser = LS[i];
             }
         }
-        if(flag == true){
+        if (flag == true) {
             // console.log(currentUser,"is current user");
-            localStorage.setItem("currentUser",JSON.stringify(currentUser))
-            window.location.href="./home.html"
+            localStorage.setItem("currentUser", JSON.stringify(currentUser))
+            window.location.href = "./home.html"
             alert("login successful")
-        }else{
+        } else {
             alert("credentials not matched")
         }
-    }else{
+    } else {
         console.log("fill all the fields");
     }
-   
+
 }
 
-// for current user 
+// for current user
 //  1. once we got matched credentials save that user as a currentuser in ls.
-// 2. now save this currentUser into ls 
+// 2. now save this currentUser into ls
 // 3. redirect usr to home page 
 
 
