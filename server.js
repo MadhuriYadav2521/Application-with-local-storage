@@ -31,6 +31,7 @@ function register(event) {
                     LS.push(data);
                     localStorage.setItem("USERS", JSON.stringify(LS));
                     alert("registration successful")
+                    window.location.href="./login.html"
                     document.getElementById("userName").value = "";
                     document.getElementById("userEmail").value = "";
                     document.getElementById("userPassword").value = "";
